@@ -1,9 +1,17 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
 using namespace std;
-double my_pow(double x, unsigned int y){
+double my_pow(double x, unsigned int y) {
     double q = 1;
-    for (int i = 0; i < y; i++) {
-        q = q * x;
+    while (y) {
+        if (y % 2 == 0) {
+            y = y / 2;
+            x = x * x;
+        }
+        else {
+            y = y - 1;
+            q = q * x;
+        }
     }
     return q;
 }
@@ -22,3 +30,5 @@ int main()
     cout << b << " в степени " << a << " = " << q;
     return 0;
 }
+
+
